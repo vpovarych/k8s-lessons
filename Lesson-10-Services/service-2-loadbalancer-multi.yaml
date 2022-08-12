@@ -27,6 +27,7 @@ spec:
 
         - name : not-my-web
           image: tomcat:8.5.38
+         # imagePullPolicy: Never
           ports:
             - containerPort: 8080  # Port on Pod
 
@@ -37,7 +38,7 @@ metadata:
   name: my-multi-pods-service
   labels:
      env  : prod
-     owner: DenisAstahov
+     owner: Viktor
 spec:
   type: LoadBalancer
   selector:

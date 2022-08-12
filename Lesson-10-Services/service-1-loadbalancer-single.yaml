@@ -13,14 +13,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      project: kgb
+      project: zsu
   template:
     metadata:
       labels:
-        project: kgb   # Service will look for those PODS Labels!!!
+        project: zsu   # Service will look for those PODS Labels!!!
     spec:
       containers:
-        - name : kgb-web
+        - name : zsu-web
           image: adv4000/k8sphp:latest
           ports:
             - containerPort: 80
@@ -32,10 +32,10 @@ metadata:
   name: my-single-pod-service
   labels:
     env  : prod
-    owner: DenisAstahov
+    owner: Viktor
 spec:
   selector:
-    project: kgb    # Selecting PODS with those Labels
+    project: zsu    # Selecting PODS with those Labels
   ports:
     - name      : app-listener
       protocol  : TCP
