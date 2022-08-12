@@ -3,37 +3,53 @@
 #
 # Copyleft (c) by Denis Astahov 2021
 #---------------------------------------------------------------------
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-hosts
 
 spec:
   rules:
-  - host: www.adv-it.net
+  - host: test.net
     http:
       paths:
-        - backend:
-           serviceName: main
-           servicePort: 80
+        - path: 
+          pathType: ImplementationSpecific
+          backend:
+           service:
+             name: main
+             port:
+               number: 80
 
-  - host: web1.adv-it.net
+  - host: web1.test.net
     http:
       paths:
-        - backend:
-           serviceName: web1
-           servicePort: 80
+        - path: 
+          pathType: ImplementationSpecific
+          backend:
+           service:
+             name: web1
+             port:
+               number: 80
 
-  - host: web2.adv-it.net
+  - host: web2.test.net
     http:
       paths:
-        - backend:
-           serviceName: web2
-           servicePort: 80
+        - path: 
+          pathType: ImplementationSpecific
+          backend:
+           service:
+             name: web2
+             port:
+               number: 80
 
-  - host: cat.adv-it.net
+  - host: cat.test.net
     http:
       paths:
-        - backend:
-           serviceName: tomcat
-           servicePort: 8080
+        - path: 
+          pathType: ImplementationSpecific
+          backend:
+           service:
+             name: tomcat
+             port:
+               number: 8080
