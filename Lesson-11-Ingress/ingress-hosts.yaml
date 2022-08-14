@@ -10,10 +10,10 @@ metadata:
 
 spec:
   rules:
-  - host: test.net
+  - host: www1.test.net
     http:
       paths:
-        - path: 
+        - path:
           pathType: ImplementationSpecific
           backend:
            service:
@@ -24,7 +24,7 @@ spec:
   - host: web1.test.net
     http:
       paths:
-        - path: 
+        - path:
           pathType: ImplementationSpecific
           backend:
            service:
@@ -35,7 +35,7 @@ spec:
   - host: web2.test.net
     http:
       paths:
-        - path: 
+        - path:
           pathType: ImplementationSpecific
           backend:
            service:
@@ -43,10 +43,21 @@ spec:
              port:
                number: 80
 
+  - host: webx.test.net
+    http:
+      paths:
+        - path:
+          pathType: ImplementationSpecific
+          backend:
+           service:
+             name: webx
+             port:
+               number: 80
+
   - host: cat.test.net
     http:
       paths:
-        - path: 
+        - path:
           pathType: ImplementationSpecific
           backend:
            service:
